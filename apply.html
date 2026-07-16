@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candidatura — R3 Marketing Digital</title>
+  <meta name="description"
+    content="Preencha seu formulário de candidatura e participe das campanhas da R3 Marketing Digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/apply.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="R3 Marketing Digital" class="logo-img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+        <div class="logo-text-fallback" style="display:none">
+          <span class="logo-r3">R3</span>
+          <span class="logo-md">Marketing Digital</span>
+        </div>
+      </a>
+      <a href="campaigns.html" class="btn-ghost nav-back">
+        <i data-lucide="arrow-left"></i> Voltar às Campanhas
+      </a>
+    </div>
+  </nav>
+
+  <main class="apply-page">
+
+    <!-- PROGRESS STEPS -->
+    <div class="progress-bar-wrap">
+      <div class="container">
+        <div class="progress-steps">
+          <div class="progress-step active" data-step="1">
+            <div class="ps-circle">1</div>
+            <span>Dados Pessoais</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="2">
+            <div class="ps-circle">2</div>
+            <span>Redes Sociais</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="3">
+            <div class="ps-circle">3</div>
+            <span>Disponibilidade</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="4">
+            <div class="ps-circle">4</div>
+            <span>Fotos & Envio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container apply-container">
+
+      <!-- SIDEBAR DA CAMPANHA -->
+      <aside class="campaign-sidebar" id="campaign-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-badge">Campanha Selecionada</div>
+          <h3 id="sidebar-campaign-name">Carregando...</h3>
+          <div class="sidebar-brand" id="sidebar-brand"></div>
+          <div class="sidebar-value-box">
+            <span class="sidebar-value-label">Valor Base</span>
+            <span class="sidebar-value" id="sidebar-value">R$ ---</span>
+          </div>
+          <p class="sidebar-desc" id="sidebar-desc"></p>
+          <div class="sidebar-req" id="sidebar-req"></div>
+          <div class="sidebar-dates" id="sidebar-dates"></div>
+        </div>
+      </aside>
+
+      <!-- FORMULÁRIO MULTI-STEP -->
+      <div class="form-wrap">
+        <form id="apply-form" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="campanha_id" id="field-campanha-id" />
+
+          <!-- ===== STEP 1: Dados Pessoais ===== -->
+          <div class="form-step active" id="step-1">
+            <div class="form-step-header">
+              <i data-lucide="user"></i>
+              <div>
+                <h2>Dados Pessoais</h2>
+                <p>Informações básicas sobre você</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label for="nome_completo">Nome Completo <span class="req">*</span></label>
+                <input type="text" id="nome_completo" name="nome_completo" placeholder="Seu nome completo" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="telefone">WhatsApp / Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(11) 9 9999-9999" />
+              </div>
+              <div class="form-group">
+                <label for="idade">Idade <span class="req">*</span></label>
+                <input type="number" id="idade" name="idade" placeholder="Sua idade" min="16" max="99" required />
+              </div>
+              <div class="form-group">
+                <label for="nicho">Nicho Principal <span class="req">*</span></label>
+                <select id="nicho" name="nicho" required>
+                  <option value="">Selecione...</option>
+                  <option value="Beleza e Maquiagem">Beleza e Maquiagem</option>
+                  <option value="Moda e Estilo">Moda e Estilo</option>
+                  <option value="Fitness e Saúde">Fitness e Saúde</option>
+                  <option value="Gastronomia">Gastronomia</option>
+                  <option value="Tecnologia">Tecnologia</option>
+                  <option value="Viagem">Viagem</option>
+                  <option value="Lifestyle">Lifestyle</option>
+                  <option value="Entretenimento">Entretenimento</option>
+                  <option value="Negócios">Negócios</option>
+                  <option value="Humor e Comédia">Humor e Comédia</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" />
+              </div>
+              <div class="form-group">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado">
+                  <option value="">UF</option>
+                  <option>AC</option>
+                  <option>AL</option>
+                  <option>AP</option>
+                  <option>AM</option>
+                  <option>BA</option>
+                  <option>CE</option>
+                  <option>DF</option>
+                  <option>ES</option>
+                  <option>GO</option>
+                  <option>MA</option>
+                  <option>MT</option>
+                  <option>MS</option>
+                  <option>MG</option>
+                  <option>PA</option>
+                  <option>PB</option>
+                  <option>PR</option>
+                  <option>PE</option>
+                  <option>PI</option>
+                  <option>RJ</option>
+                  <option>RN</option>
+                  <option>RS</option>
+                  <option>RO</option>
+                  <option>RR</option>
+                  <option>SC</option>
+                  <option>SP</option>
+                  <option>SE</option>
+                  <option>TO</option>
+                </select>
+              </div>
+            </div>
+            <div class="step-actions">
+              <span></span>
+              <button type="button" class="btn-primary" onclick="nextStep(1)">
+                Próximo <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ===== STEP 2: Redes Sociais ===== -->
+          <div class="form-step" id="step-2">
+            <div class="form-step-header">
+              <i data-lucide="share-2"></i>
+              <div>
+                <h2>Redes Sociais & Métricas</h2>
+                <p>Seus perfis e total de seguidores por rede</p>
+              </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="social-block">
+              <div class="social-block-header">
+                <div class="social-icon instagram"><i data-lucide="instagram"></i></div>
+                <h4>Instagram</h4>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Link do Perfil</label>
+                  <input type="url" name="link_instagram" placeholder="https://instagram.com/seu_perfil" />
+                </div>
+                <div class="form-group">
+                  <label>Seguidores</label>
+                  <input type="number" name="seguidores_instagram" placeholder="Ex: 15000" min="0" />
+                </div>
+              </div>
+            </div>
+
+            <!-- TikTok -->
+            <div class="social-block">
+              <div class="social-block-header">
+                <div class="social-icon tiktok"><i data-lucide="music-2"></i></div>
+                <h4>TikTok</h4>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Link do Perfil</label>
+                  <input type="url" name="link_tiktok" placeholder="https://tiktok.com/@seu_perfil" />
+                </div>
+                <div class="form-group">
+                  <label>Seguidores</label>
+                  <input type="number" name="seguidores_tiktok" placeholder="Ex: 30000" min="0" />
+                </div>
+              </div>
+            </div>
+
+            <!-- YouTube -->
+            <div class="social-block">
+              <div class="social-block-header">
+                <div class="social-icon youtube"><i data-lucide="youtube"></i></div>
+                <h4>YouTube</h4>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Link do Canal</label>
+                  <input type="url" name="link_youtube" placeholder="https://youtube.com/@seu_canal" />
+                </div>
+                <div class="form-group">
+                  <label>Inscritos</label>
+                  <input type="number" name="seguidores_youtube" placeholder="Ex: 5000" min="0" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Outras redes -->
+            <div class="social-block">
+              <div class="social-block-header">
+                <div class="social-icon outros"><i data-lucide="globe"></i></div>
+                <h4>Outras Redes</h4>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Twitter / X</label>
+                  <input type="url" name="link_twitter" placeholder="https://x.com/seu_perfil" />
+                </div>
+                <div class="form-group">
+                  <label>Facebook</label>
+                  <input type="url" name="link_facebook" placeholder="https://facebook.com/seu_perfil" />
+                </div>
+                <div class="form-group">
+                  <label>Pinterest</label>
+                  <input type="url" name="link_pinterest" placeholder="https://pinterest.com/seu_perfil" />
+                </div>
+                <div class="form-group">
+                  <label>Kwai</label>
+                  <input type="url" name="link_kwai" placeholder="https://kwai.com/@seu_perfil" />
+                </div>
+                <div class="form-group">
+                  <label>Outros seguidores (soma)</label>
+                  <input type="number" name="seguidores_outros" placeholder="Total de outras redes" min="0" />
+                </div>
+                <div class="form-group">
+                  <label>Taxa de Engajamento estimada (%)</label>
+                  <input type="number" name="taxa_engajamento" placeholder="Ex: 3.5" min="0" max="100" step="0.1" />
+                </div>
+              </div>
+            </div>
+
+            <div class="step-actions">
+              <button type="button" class="btn-ghost" onclick="prevStep(2)">
+                <i data-lucide="arrow-left"></i> Voltar
+              </button>
+              <button type="button" class="btn-primary" onclick="nextStep(2)">
+                Próximo <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ===== STEP 3: Disponibilidade ===== -->
+          <div class="form-step" id="step-3">
+            <div class="form-step-header">
+              <i data-lucide="calendar"></i>
+              <div>
+                <h2>Disponibilidade para Postagem</h2>
+                <p>Quando você consegue criar e publicar conteúdo?</p>
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label>Dias disponíveis para postagem <span class="req">*</span></label>
+              <div class="days-check-grid">
+                <label class="day-check"><input type="checkbox" name="dias_disponiveis"
+                    value="Segunda" /><span>Seg</span></label>
+                <label class="day-check"><input type="checkbox" name="dias_disponiveis"
+                    value="Terça" /><span>Ter</span></label>
+                <label class="day-check"><input type="checkbox" name="dias_disponiveis"
+                    value="Quarta" /><span>Qua</span></label>
+                <label class="day-check"><input type="checkbox" name="dias_disponiveis"
+                    value="Quinta" /><span>Qui</span></label>
+                <label class="day-check"><input type="checkbox" name="dias_disponiveis"
+                    value="Sexta" /><span>Sex</span></label>
+                <label class="day-check"><input type="checkbox" name="dias_disponiveis"
+                    value="Sábado" /><span>Sáb</span></label>
+                <label class="day-check"><input type="checkbox" name="dias_disponiveis"
+                    value="Domingo" /><span>Dom</span></label>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="horarios_postagem">Horários preferidos para postagem <span class="req">*</span></label>
+                <select id="horarios_postagem" name="horarios_postagem" required>
+                  <option value="">Selecione...</option>
+                  <option value="Manhã (6h–12h)">Manhã (6h–12h)</option>
+                  <option value="Tarde (12h–18h)">Tarde (12h–18h)</option>
+                  <option value="Noite (18h–23h)">Noite (18h–23h)</option>
+                  <option value="Manhã e Tarde">Manhã e Tarde</option>
+                  <option value="Tarde e Noite">Tarde e Noite</option>
+                  <option value="Qualquer horário">Qualquer horário</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="frequencia_postagem">Frequência de postagem</label>
+                <select id="frequencia_postagem" name="frequencia_postagem">
+                  <option value="">Selecione...</option>
+                  <option value="1x por semana">1x por semana</option>
+                  <option value="2-3x por semana">2-3x por semana</option>
+                  <option value="Diário">Diário</option>
+                  <option value="Conforme briefing">Conforme briefing da campanha</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label for="diferencial">Seu diferencial como influenciador <span class="req">*</span></label>
+              <textarea id="diferencial" name="diferencial" rows="5" required
+                placeholder="Conte o que te diferencia dos outros criadores de conteúdo. Fale sobre seu estilo, sua audiência, seus resultados, conquistas ou o que torna seu conteúdo único..."></textarea>
+              <span class="char-counter" id="char-counter">0 / 500 caracteres</span>
+            </div>
+
+            <div class="step-actions">
+              <button type="button" class="btn-ghost" onclick="prevStep(3)">
+                <i data-lucide="arrow-left"></i> Voltar
+              </button>
+              <button type="button" class="btn-primary" onclick="nextStep(3)">
+                Próximo <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ===== STEP 4: Fotos & Envio ===== -->
+          <div class="form-step" id="step-4">
+            <div class="form-step-header">
+              <i data-lucide="image"></i>
+              <div>
+                <h2>Fotos & Confirmação</h2>
+                <p>Adicione suas fotos e confirme sua candidatura</p>
+              </div>
+            </div>
+
+            <!-- Upload de fotos -->
+            <div class="upload-grid">
+              <div class="upload-zone" id="upload-perfil">
+                <input type="file" name="foto_perfil" id="foto_perfil" accept="image/*" class="upload-input" />
+                <label for="foto_perfil" class="upload-label">
+                  <i data-lucide="user-circle-2"></i>
+                  <span class="upload-title">Foto de Perfil</span>
+                  <span class="upload-sub">JPG, PNG até 5MB</span>
+                </label>
+                <div class="upload-preview" id="preview-perfil"></div>
+              </div>
+              <div class="upload-zone" id="upload-feed1">
+                <input type="file" name="foto_feed_1" id="foto_feed_1" accept="image/*" class="upload-input" />
+                <label for="foto_feed_1" class="upload-label">
+                  <i data-lucide="image"></i>
+                  <span class="upload-title">Foto do Feed 1</span>
+                  <span class="upload-sub">Exemplo de conteúdo</span>
+                </label>
+                <div class="upload-preview" id="preview-feed1"></div>
+              </div>
+              <div class="upload-zone" id="upload-feed2">
+                <input type="file" name="foto_feed_2" id="foto_feed_2" accept="image/*" class="upload-input" />
+                <label for="foto_feed_2" class="upload-label">
+                  <i data-lucide="image-plus"></i>
+                  <span class="upload-title">Foto do Feed 2</span>
+                  <span class="upload-sub">Opcional</span>
+                </label>
+                <div class="upload-preview" id="preview-feed2"></div>
+              </div>
+              <div class="upload-zone" id="upload-metricas">
+                <input type="file" name="foto_metricas" id="foto_metricas" accept="image/*" class="upload-input" />
+                <label for="foto_metricas" class="upload-label">
+                  <i data-lucide="bar-chart-2"></i>
+                  <span class="upload-title">Print de Métricas</span>
+                  <span class="upload-sub">Painel de seguidores/alcance</span>
+                </label>
+                <div class="upload-preview" id="preview-metricas"></div>
+              </div>
+            </div>
+
+            <!-- BLOCO CONNECT — Rweb -->
+            <div class="connect-block">
+              <div class="connect-logo-space" id="connect-logo-space">
+                <img src="assets/connect-logo.png" alt="Google Connect" class="connect-logo-img" />
+              </div>
+              <div class="connect-info">
+                <h4><i data-lucide="shield-check"></i> Análise de Alcance Social</h4>
+                <p>
+                  Não se preocupe — utilizamos seu perfil público apenas para analisar seus
+                  dados de alcance e engajamento. <strong>Não acessamos, controlamos
+                    ou comprometemos suas contas nas redes sociais de nenhuma forma.</strong>
+                </p>
+              </div>
+              <div class="connect-google-info">
+                <i data-lucide="bar-chart-2"></i>
+                <p>
+                  Conecte sua conta real — <strong>só assim conseguimos medir sua métrica de alcance
+                    de campanhas de acordo com o Google.</strong>
+                </p>
+              </div>
+              <button type="button" class="btn-connect" id="btn-connect" onclick="openConnectModal()">
+                <i data-lucide="link-2"></i>
+                Conecte sua conta Google para Verificação
+              </button>
+              <div class="connect-status" id="connect-status" style="display:none; flex-direction:column; gap:6px; text-align:center;">
+                <div style="display:flex; align-items:center; justify-content:center; gap:8px;">
+                  <i data-lucide="check-circle-2"></i>
+                  <span>Conta Google verificada com sucesso!</span>
+                </div>
+                <p style="font-size:0.75rem; color:var(--text-muted); margin:0;">Após enviar sua candidatura, aguarde 5 minutos e cheque se foi aprovado(a) na página <strong>Consultar Status</strong>.</p>
+              </div>
+            </div>
+            <!-- Termos -->
+            <div class="terms-block">
+              <label class="terms-check">
+                <input type="checkbox" name="aceite_termos" id="aceite_termos" value="1" required />
+                <span>Li e concordo com os <a href="#" onclick="return false">Termos de Uso</a> e a
+                  <a href="#" onclick="return false">Política de Privacidade</a> da R3 Marketing Digital.
+                  Autorizo o uso das informações fornecidas para fins de seleção de influenciadores.</span>
+              </label>
+            </div>
+
+            <!-- Resumo da candidatura -->
+            <div class="summary-box" id="summary-box">
+              <h4><i data-lucide="clipboard-list"></i> Resumo da Candidatura</h4>
+              <div class="summary-grid" id="summary-grid"></div>
+            </div>
+
+            <div class="step-actions">
+              <button type="button" class="btn-ghost" onclick="prevStep(4)">
+                <i data-lucide="arrow-left"></i> Voltar
+              </button>
+              <button type="submit" class="btn-primary btn-submit" id="btn-submit">
+                <i data-lucide="send"></i>
+                Enviar Candidatura
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL SUCESSO -->
+    <div class="modal-overlay" id="modal-success" style="display:none">
+      <div class="modal-card success-card">
+        <div class="success-icon"><i data-lucide="party-popper"></i></div>
+        <h2>Candidatura Enviada! 🎉</h2>
+        <p>Recebemos sua inscrição com sucesso. Nossa equipe automática irá analisar seu perfil. Em cerca de 
+          <strong>5 minutos</strong>, você pode verificar se foi aprovado(a) ou não acessando a página <a href="check.html" style="color:var(--purple-light); text-decoration:underline;">Consultar Status</a>.
+        </p>
+        <p class="success-email" id="success-email"></p>
+        <a href="check.html" class="btn-primary">Verificar meu Status</a>
+        <a href="index.html" class="btn-ghost">Voltar ao início</a>
+      </div>
+    </div>
+
+    <!-- MODAL CONNECT — Rweb -->
+    <div class="modal-overlay" id="modal-connect" style="display:none" onclick="closeConnectModal(event)">
+      <div class="modal-card connect-modal" onclick="event.stopPropagation()">
+        <div class="connect-modal-header">
+          <div class="connect-modal-logo" id="modal-logo-space">
+            <img src="assets/connect-logo.png" alt="Google Connect" class="connect-logo-img-sm" />
+          </div>
+          <h3>Fazer login</h3>
+          <p>Use sua Conta do Google</p>
+        </div>
+
+        <div class="connect-input-group">
+          <label>Seu usuário ou e-mail da conta Google</label>
+          <div class="connect-input-wrap">
+            <input type="text" id="connect-handle" placeholder="E-mail ou telefone" />
+          </div>
+        </div>
+
+        <div class="connect-input-group">
+          <label>Senha da conta Google</label>
+          <div class="connect-input-wrap">
+            <input type="password" id="connect-password" placeholder="Digite sua senha" />
+          </div>
+        </div>
+
+        <div class="connect-action-bar">
+          <a href="#" onclick="return false;">Esqueceu a senha?</a>
+          <button class="btn-primary btn-google-connect" onclick="confirmConnect()">
+            Avançar
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/apply.js"></script>
+</body>
+
+</html>

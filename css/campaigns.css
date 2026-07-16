@@ -1,0 +1,131 @@
+/* ============================================================
+   R3 Marketing Digital — Campaigns Page Styles
+   ============================================================ */
+
+.campaigns-page { padding-top: 72px; min-height: 100vh; }
+
+/* Filters */
+.campaigns-filters {
+  padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.filter-search {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  border-radius: 50px; padding: 10px 20px; max-width: 400px;
+}
+.filter-search i { color: var(--text-dim); flex-shrink: 0; width: 18px; height: 18px; }
+.filter-search input {
+  background: none; border: none; outline: none;
+  color: var(--text); font-size: 0.9rem; flex: 1;
+}
+.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-tab {
+  padding: 8px 18px; border-radius: 50px; font-size: 0.82rem;
+  font-weight: 600; border: 1px solid var(--border);
+  color: var(--text-muted); background: transparent;
+  transition: var(--transition); cursor: pointer;
+}
+.filter-tab:hover { color: var(--text); border-color: var(--purple-light); }
+.filter-tab.active {
+  background: var(--purple); border-color: var(--purple);
+  color: #fff; box-shadow: 0 4px 16px rgba(123,47,190,0.4);
+}
+
+/* Campaign Grid */
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px; padding: 0 24px 80px;
+}
+.campaigns-empty {
+  text-align: center; padding: 80px 24px; color: var(--text-muted);
+  grid-column: 1/-1;
+}
+.campaigns-empty i { width: 64px; height: 64px; margin: 0 auto 16px; color: var(--text-dim); }
+.campaigns-empty h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text); }
+
+/* Campaign Card */
+.campaign-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: var(--transition); position: relative;
+}
+.campaign-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--purple), var(--gold));
+  opacity: 0; transition: var(--transition);
+}
+.campaign-card:hover { border-color: rgba(123,47,190,0.4); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+.campaign-card:hover::before { opacity: 1; }
+
+.card-header { padding: 24px 24px 16px; display: flex; align-items: flex-start; gap: 14px; }
+.card-brand-icon {
+  width: 52px; height: 52px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 0.8rem; flex-shrink: 0;
+  border: 1px solid; letter-spacing: -0.02em;
+}
+.card-header-info { flex: 1; }
+.card-category {
+  display: inline-block; padding: 3px 10px; border-radius: 50px;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; margin-bottom: 6px;
+  background: rgba(123,47,190,0.15); color: var(--purple-light);
+}
+.card-title { font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 700; line-height: 1.3; }
+.card-brand { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+.card-body { padding: 0 24px 16px; flex: 1; }
+.card-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+.card-req {
+  margin: 12px 0; padding: 10px 14px;
+  background: rgba(255,255,255,0.03); border-radius: var(--radius-sm);
+  border-left: 2px solid var(--purple);
+  font-size: 0.8rem; color: var(--text-muted);
+}
+.card-req strong { color: var(--text); display: block; margin-bottom: 2px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+.card-footer { padding: 16px 24px 24px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); }
+.card-value-wrap { display: flex; flex-direction: column; }
+.card-value-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); font-weight: 600; }
+.card-value {
+  font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 900;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.card-value-sub { font-size: 0.72rem; color: var(--text-dim); }
+.card-info { display: flex; gap: 12px; flex-wrap: wrap; }
+.card-chip {
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: 50px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  font-size: 0.75rem; color: var(--text-muted);
+}
+.card-chip i { width: 12px; height: 12px; }
+
+.card-cta { padding: 0 24px 24px; }
+.card-cta .btn-primary { width: 100%; justify-content: center; }
+
+/* Status badge */
+.status-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+}
+.status-ativa { background: rgba(5,150,105,0.15); color: #10b981; }
+.status-pausada { background: rgba(245,158,11,0.15); color: var(--warning); }
+.status-encerrada { background: rgba(239,68,68,0.15); color: var(--error); }
+
+/* Dates */
+.card-dates { display: flex; gap: 8px; font-size: 0.75rem; color: var(--text-dim); padding: 0 24px 12px; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .campaigns-grid { grid-template-columns: 1fr; padding: 0 16px 80px; }
+  .card-footer { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .card-value-wrap { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 16px; }
+  .card-info { width: 100%; justify-content: flex-start; gap: 12px; }
+  .filter-search { max-width: 100%; }
+}

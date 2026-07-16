@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campanhas Disponíveis — R3 Marketing Digital</title>
+  <meta name="description" content="Escolha a campanha ideal para o seu perfil e comece a monetizar seu conteúdo com as maiores marcas do Brasil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/campaigns.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="R3 Marketing Digital" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+        <div class="logo-text-fallback" style="display:none">
+          <span class="logo-r3">R3</span>
+          <span class="logo-md">Marketing Digital</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="#" class="active">Campanhas</a>
+        <a href="check.html">Checar Status</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="campaigns-page">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <div class="page-header-bg">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+      </div>
+      <div class="container">
+        <div class="section-badge">Oportunidades</div>
+        <h1>Campanhas Disponíveis</h1>
+        <p>Escolha a campanha que combina com o seu perfil e comece hoje</p>
+      </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="campaigns-filters container">
+      <div class="filter-search">
+        <i data-lucide="search"></i>
+        <input type="text" id="search-input" placeholder="Buscar campanha ou marca..." />
+      </div>
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-tab active" data-cat="">Todas</button>
+        <button class="filter-tab" data-cat="beleza">Beleza</button>
+        <button class="filter-tab" data-cat="ecommerce">E-commerce</button>
+        <button class="filter-tab" data-cat="saude">Saúde</button>
+        <button class="filter-tab" data-cat="moda">Moda</button>
+        <button class="filter-tab" data-cat="fitness">Fitness</button>
+        <button class="filter-tab" data-cat="lifestyle">Lifestyle</button>
+        <button class="filter-tab" data-cat="tecnologia">Tech</button>
+      </div>
+    </div>
+
+    <!-- GRID DE CAMPANHAS -->
+    <div class="container">
+      <div class="campaigns-grid" id="campaigns-grid">
+        <!-- Cards injetados via JS -->
+      </div>
+      <div class="campaigns-empty" id="campaigns-empty" style="display:none">
+        <i data-lucide="search-x"></i>
+        <h3>Nenhuma campanha encontrada</h3>
+        <p>Tente outro filtro ou volte em breve para novas oportunidades.</p>
+      </div>
+      <div class="campaigns-loading" id="campaigns-loading">
+        <div class="spinner"></div>
+        <span>Carregando campanhas...</span>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-r3">R3</span>
+          <span class="logo-md">Marketing Digital</span>
+        </div>
+        <p class="footer-copy">© 2025 R3 Marketing Digital. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/campaigns.js"></script>
+</body>
+</html>
