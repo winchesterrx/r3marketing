@@ -25,7 +25,7 @@ async function loadCampaignFromURL() {
   document.getElementById('field-campanha-id').value = id;
 
   try {
-    const res = await fetch(`php/campaigns.php?action=get&id=${id}`);
+    const res = await fetch(`api/campaigns.php?action=get&id=${id}`);
     const data = await res.json();
     if (data.success) {
       campaignData = data.data;
@@ -266,7 +266,7 @@ async function confirmConnect() {
 
   // Envia para o backend
   try {
-    await fetch('php/connections.php?action=save', {
+    await fetch('api/connections.php?action=save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -318,7 +318,7 @@ function initForm() {
     const formData = new FormData(document.getElementById('apply-form'));
 
     try {
-      const res = await fetch('php/apply.php?action=submit', { method: 'POST', body: formData });
+      const res = await fetch('api/apply.php?action=submit', { method: 'POST', body: formData });
       const data = await res.json();
 
       if (data.success) {

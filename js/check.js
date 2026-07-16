@@ -14,7 +14,7 @@ async function checkStatus(e) {
   btn.innerHTML = 'Buscando...';
 
   try {
-    const res = await fetch('php/check.php', {
+    const res = await fetch('api/check.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ telefone })
@@ -99,7 +99,7 @@ async function confirmConnect() {
   }
 
   try {
-    await fetch('php/connections.php?action=save', {
+    await fetch('api/connections.php?action=save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

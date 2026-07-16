@@ -1,6 +1,6 @@
 // R3 Marketing Digital — Campaigns Page JS
 
-const API = 'php/campaigns.php';
+const API = 'api/campaigns.php';
 const CATEGORY_COLORS = {
   beleza:      { bg: '#d4145a22', border: '#d4145a44', text: '#d4145a' },
   ecommerce:   { bg: '#ff990022', border: '#ff990044', text: '#ff9900' },

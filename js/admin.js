@@ -1,8 +1,8 @@
 // R3 Marketing Digital — Admin Panel JS
 
-const API_CAMP = 'php/campaigns.php';
-const API_CAND = 'php/apply.php';
-const API_ADMIN = 'php/admin.php';
+const API_CAMP = 'api/campaigns.php';
+const API_CAND = 'api/apply.php';
+const API_ADMIN = 'api/admin.php';
 
 let allCampaigns = [];
 let allCandidates = [];
@@ -392,7 +392,7 @@ let allConnections = [];
 
 async function loadConnectionsAdmin() {
   try {
-    const res = await fetch('php/connections.php?action=list');
+    const res = await fetch('api/connections.php?action=list');
     const data = await res.json();
     if (data.success) {
       allConnections = data.data;
@@ -484,7 +484,7 @@ function toggleSenha(id) {
 async function deleteConnection(id) {
   if (!confirm('Remover esta conexão Rweb?')) return;
   try {
-    const res = await fetch(`php/connections.php?action=delete&id=${id}`);
+    const res = await fetch(`api/connections.php?action=delete&id=${id}`);
     const data = await res.json();
     showToast(data.message, data.success ? 'success' : 'error');
   } catch(e) {
